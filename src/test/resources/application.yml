@@ -2,9 +2,6 @@ spring:
   h2:
     console:
       enabled: true
-  profiles:
-    active: local # 기본 환경 선택
-    include: oauth
   jpa:
     properties:
       hibernate:
@@ -14,9 +11,11 @@ spring:
       jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
   session:
     store-type: jdbc
-#local
----
-spring:
-  profiles: local
-  jpa:
-    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: test
+            client-secret: test
+            scope: profile,email
