@@ -19,3 +19,19 @@ notifications:
   email:
     recipients:
       - suchun@hitel.net
+
+before_deploy:
+  - zip -r springboot2-webservice
+  - mkdir -p deploy
+  - mv pathos-springboot2-webservice.zip deploy/pathos-springboot2-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: pathos-springboot-build
+    region:  ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
