@@ -21,7 +21,7 @@ notifications:
       - suchun@hitel.net
 
 before_deploy:
-  - zip -r cgpathos/springboot2-webservice
+  - zip -r pathos-springboot2-webservice *
   - mkdir -p deploy
   - mv pathos-springboot2-webservice.zip deploy/pathos-springboot2-webservice.zip
 
