@@ -9,7 +9,7 @@ cp $REPOSITORY/zip//*.jar $REPOSITORY/
 
 echo "> check running pid"
 
-CURRENT_PID=$(pgrep -fl pathos-springboot2-webservice | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl springboot2-webservice | grep jar | awk '{print $1}')
 
 echo "current running pid: " $CURRENT_PID
 
