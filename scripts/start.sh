@@ -30,10 +30,3 @@ nohup java -jar \
     -Dspring.config.location=classpath:/application.yml,classpath:/application-$IDLE_PROFILE.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/application-real-db.yml \
     -Dspring.profiles.active=$IDLE_PROFILE \
     $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
-
-nohup java -jar \
-    -Dspring.config.location=classpath:/application.yml,classpath:/application-real.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/application-real-db.yml \
-    -Dspring.profiles.active=real \
-    springboot2-webservice-1.0.2-SNAPSHOT20200611165333.jar > /home/ec2-user/app/step3/nohup.out 2>&1 &
-
-
