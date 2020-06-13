@@ -3,9 +3,9 @@ spring:
     console:
       enabled: true
   profiles:
+    active: local # 기본 환경 선택
     include: oauth
   jpa:
-    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -14,3 +14,9 @@ spring:
       jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
   session:
     store-type: jdbc
+#local
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: true
