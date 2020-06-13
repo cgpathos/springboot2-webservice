@@ -34,6 +34,6 @@ chmod +x $JAR_NAME
 echo "> running $JAR_NAME"
 
 nohup java -jar \
-    -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/aaplication-real-db.yml,classpath:/application-real.yml \
-    -Dspring.profiles.active=real \
+    -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/aaplication-real-db.yml,classpath:/application-real1.yml \
+    -Dspring.profiles.active=real1 \
     $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
