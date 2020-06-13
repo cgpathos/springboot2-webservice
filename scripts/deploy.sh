@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ec2-user/app/step3
+REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=springboot2-webservice
 
 echo "> copy build files"
@@ -34,6 +34,6 @@ chmod +x $JAR_NAME
 echo "> running $JAR_NAME"
 
 nohup java -jar \
-    -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/aaplication-real-db.yml,classpath:/application-real1.yml \
-    -Dspring.profiles.active=real1 \
+    -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-oauth.yml,/home/ec2-user/app/aaplication-real-db.yml,classpath:/application-real.yml \
+    -Dspring.profiles.active=real \
     $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
